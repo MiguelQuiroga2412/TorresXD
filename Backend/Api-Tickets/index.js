@@ -3,13 +3,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import conectarDB from "./config/db.js";
-import rolesRoutes from "./routes/rolesRoutes.js";
 import usuariosRoutes from "./routes/usuariosRoutes.js";
-import categoriasRoutes from "./routes/categoriasRoutes.js";
-import ticketsRoutes from "./routes/ticketsRoutes.js";
-import respuestaTicketsRoutes from "./routes/respuestaTicketsRoutes.js";
-import imagenTicketsRoutes from "./routes/imagenTicketsRoutes.js";
-import imagenRespuestasRoutes from "./routes/imagenRespuestasRoutes.js";
 import cors from "cors"
 
 /* Creando una instancia del framework express. */
@@ -40,12 +34,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 /* Una forma de crear rutas. */
-app.use("/api/roles", rolesRoutes);
 app.use("/api/usuarios", usuariosRoutes);
-app.use("/api/categorias", categoriasRoutes);
-app.use("/api/tickets", ticketsRoutes);
-app.use("/api/restickets", respuestaTicketsRoutes);
-app.use("/api/imagenesrespuestas", imagenRespuestasRoutes);
 
 /* Una forma de establecer el número de puerto para el servidor. */
 const PORT = process.env.PORT || 4000;

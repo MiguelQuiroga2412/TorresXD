@@ -1,5 +1,4 @@
 import Usuario from "../models/usuario.js";
-import generarJWT from "../helpers/generarJWT.js";
 
 const agregar = async (req, res) => {
   const { usuarioAcceso } = req.body;
@@ -105,7 +104,6 @@ const autenticar = async (req, res) => {
       nombresUsuario: usuario.nombresUsuario,
       usuarioAcceso: usuario.usuarioAcceso,
       idRol: usuario.idRol,
-      tokenJwt: generarJWT(usuario._id),
     });
   } else {
     const error = new Error("La clave es incorrecta");
